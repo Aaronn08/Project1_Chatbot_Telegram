@@ -13,11 +13,14 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("chat something i will respond, try /custom")
 
+async def course_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("I am taking coding class and in group of social science ")
+
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("I have some commands such as : \n /setbahasa [bahasa] for setting language \n /school for school profile ")
+    await update.message.reply_text("I have some commands such as : \n /setbahasa [bahasa] for setting language \n /school for school profile \n /course for knowing what course I take")
     
 async def school_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("I study at IGS, the address is Mayor Ruslan Street Num.118, 9 Ilir, Kec. Ilir Tim. I, City of Palembang, South Sumatera")
+    await update.message.reply_text("I study at Ignatius Global School, the address is Mayor Ruslan Street Num.118, 9 Ilir, Kec. Ilir Tim. I, City of Palembang, South Sumatera")
 
 async def set_language(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = update.effective_user.id
@@ -106,6 +109,7 @@ if __name__ == '__main__':
 
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
+    app.add_handler(CommandHandler('course', course_command))
     app.add_handler(CommandHandler('custom', custom_command))
     app.add_handler(CommandHandler('school', school_command))
     app.add_handler(CommandHandler('setbahasa', set_language))
