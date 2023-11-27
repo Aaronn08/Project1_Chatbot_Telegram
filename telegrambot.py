@@ -71,7 +71,7 @@ async def respond_based_on_language(update: Update, text_received: str, selected
         fine_responses = {'indo': 'Aku baik baik saja, terimakasih telah menanyakan 😊', 'inggris': 'Im fine, thankyou for asking 😊'}
         await update.message.reply_text(f"{fine_responses[selected_language]}")
 
-    elif any(keyword in text_lower for keyword in ['siapa kamu?', 'siapa kamu' 'who are you?', 'who are you']):
+    elif any(keyword in text_lower for keyword in ['siapa kamu?', 'siapa kamu', 'who are you?', 'who are you']):
         bot_description = {'indo': 'Saya adalah siswa SMA IGS.', 'inggris': 'I am a student in SMA IGS.'}
         await update.message.reply_text(f"{bot_description[selected_language]}")
 
