@@ -11,8 +11,11 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     await update.message.reply_text("Hello! Thanks for chatting with me, use /help to get help")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("chat something i will respond, i have some command like /setbahasa [bahasa] for setting language")
+    await update.message.reply_text("chat something i will respond, try /custom")
 
+async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("I have some commands such as : \n /setbahasa [bahasa] for setting language \n /school for school profile ")
+    
 async def school_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("I study at IGS, the address is Mayor Ruslan Street Num.118, 9 Ilir, Kec. Ilir Tim. I, City of Palembang, South Sumatera")
 
@@ -103,6 +106,7 @@ if __name__ == '__main__':
 
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
+    app.add_handler(CommandHandler('custom', custom_command))
     app.add_handler(CommandHandler('school', school_command))
     app.add_handler(CommandHandler('setbahasa', set_language))
     app.add_handler(MessageHandler(filters.TEXT, text_message))
